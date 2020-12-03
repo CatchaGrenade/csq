@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learn.dao.MenuDao">
+    <resultMap type="com.learn.model.MenuModel" id="MenuResult">
+        <id     property="menuId"       column="menu_id"    jdbcType="DOUBLE"   />
+        <result property="menuName"     column="menu_name"  jdbcType="VARCHAR"  />
+        <result property="linkUrl"      column="link_url"   jdbcType="VARCHAR"  />
+        <result property="target"       column="target"     jdbcType="VARCHAR"  />
+        <result property="parentId"     column="parent_id"  jdbcType="DOUBLE"   />
+        <result property="sort"         column="sort"       jdbcType="DOUBLE"   />
+        <result property="imageUrl"     column="image_url"  jdbcType="VARCHAR"  />
+        <result property="showType"     column="show_type"  jdbcType="VARCHAR"  />
+        <result property="isActive"     column="is_active"  jdbcType="VARCHAR"  />
+        <result property="remark"       column="remark"     jdbcType="VARCHAR"  />
+    </resultMap>
+
+    <select id="getAllMenu" resultMap="MenuResult">
+        select t.* from sys_menu t
+    </select>
+</mapper>
